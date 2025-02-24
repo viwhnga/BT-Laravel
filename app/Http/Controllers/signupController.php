@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\signupRequest;
+use Illuminate\Support\Facades\Session;
 
 class signupController extends Controller
 {
@@ -40,7 +41,15 @@ class signupController extends Controller
             'address.required' => 'Địa chỉ không được để trống.',
         ]);
 
-        // Nếu không có lỗi, lưu thông tin
-        return view('signup', ['user' => $request->all()]);
+        // Lấy danh sách người dùng từ session (nếu có)
+        $users = Session::get('users', []);
+
+        // Thêm người dùng mới vào mảng
+        $users[] = $request->all();
+
+        // Lưu mảng vào session
+        Session::put('users', $users);
+
+        return view('signup', ['users' => $users]);
     }
 }

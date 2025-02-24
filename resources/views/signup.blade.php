@@ -65,5 +65,22 @@
         <p>Website: {{ $user['web'] }}</p>
         <p>Địa Chỉ: {{ $user['address'] }}</p>
     @endif
+
+   <h2>Danh Sách Người Đăng Ký</h2>
+@if (session('users'))
+    <ul>
+        @foreach (session('users') as $user)
+            <li>
+                <strong>Họ Tên:</strong> {{ $user['name'] }} <br>
+                <strong>Tuổi:</strong> {{ $user['age'] }} tuổi <br>
+                <strong>Ngày Sinh:</strong> {{ $user['date'] }} <br>
+                <strong>Điện Thoại:</strong> {{ $user['phone'] }} <br>
+                <strong>Website:</strong> {{ $user['web'] }} <br>
+                <strong>Địa Chỉ:</strong> {{ $user['address'] }}
+            </li>
+        @endforeach
+    </ul>
+@endif
+
 </body>
 </html>

@@ -60,3 +60,34 @@ p {
     text-align: center;
     font-size: 16px;
 }
+
+/* Danh sách người đăng ký */
+/* Danh sách người đăng ký */
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    width: 400px;
+}
+
+li {
+    background-color: #ffffff;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #5d8a49;
+}
+
+li strong {
+    color: #333;
+}
+
+li br {
+    display: block;
+    margin: 5px 0;
+}
